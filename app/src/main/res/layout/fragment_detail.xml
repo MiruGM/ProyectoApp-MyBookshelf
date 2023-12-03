@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".ui.detail.DetailFragment"
+    >
+
+    <TextView
+        android:id="@+id/tvTitleT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivCover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleT" />
+
+    <TextView
+        android:id="@+id/tvAuthorT"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Autor: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover" />
+
+    <TextView
+        android:id="@+id/tvAuthorC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contenido"
+        app:layout_constraintStart_toEndOf="@+id/tvAuthorT"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <TextView
+        android:id="@+id/tvGenreT"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Género: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuthorT" />
+
+    <TextView
+        android:id="@+id/tvGenreC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contenido"
+        app:layout_constraintStart_toEndOf="@+id/tvGenreT"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuthorC" />
+
+    <TextView
+        android:id="@+id/tvReviewT"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Reseña: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGenreT" />
+
+    <TextView
+        android:id="@+id/tvReviewC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contenido"
+        app:layout_constraintStart_toEndOf="@+id/tvReviewT"
+        app:layout_constraintTop_toBottomOf="@+id/tvGenreC" />
+
+    <TextView
+        android:id="@+id/tvReadAgainT"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Volvería a leerlo: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewT" />
+
+    <TextView
+        android:id="@+id/tvReadAgainC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contenido"
+        app:layout_constraintStart_toEndOf="@+id/tvReadAgainT"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewC" />
+
+    <Button
+        android:id="@+id/btnMore"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="+info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReadAgainC" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="atrás"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMore" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
