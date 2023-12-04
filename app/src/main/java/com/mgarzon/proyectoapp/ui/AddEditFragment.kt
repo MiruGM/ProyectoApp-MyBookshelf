@@ -25,6 +25,7 @@ class AddEditFragment : Fragment(R.layout.fragment_add_edit) {
             val position = arguments?.getInt(POS)
             // Si position es distinto de -1, es que estoy editando
             if (position != -1) {
+                tvEditCrear.text = "Editar Libro"
                 etTitle.setText(BooksProvider.listOfBooks[position!!].title)
                 etAuthor.setText(BooksProvider.listOfBooks[position].author)
                 etGenre.setText(BooksProvider.listOfBooks[position].genre)
