@@ -41,9 +41,7 @@ class MainPageFragment : Fragment(R.layout.fragment_main_page) {
             rvList.adapter = adapter
 
             loadBooks()
-            if (adapter.itemCount == 0) {
-                loadBooks()
-            }
+
 
             btnAdd.setOnClickListener {
                 findNavController().navigate(
@@ -73,16 +71,16 @@ class MainPageFragment : Fragment(R.layout.fragment_main_page) {
     }
 
     fun onDelete(position: Int) {
-//        viewModel.deleteBook(position)
-//        adapter.notifyDataSetChanged()
+        viewModel.deleteBook(position)
+        adapter.notifyDataSetChanged()
 
-        GlobalScope.launch(Dispatchers.Main) {
+/*        GlobalScope.launch(Dispatchers.Main) {
           val deleteBook = withContext(Dispatchers.IO) {
               BooksProvider.deleteBook(position)
           }
             Toast.makeText(requireContext(), "Libro eliminado", Toast.LENGTH_SHORT).show()
             adapter.notifyDataSetChanged()
-        }
+        }*/
     }
 
     fun onEdit(position: Int) {
