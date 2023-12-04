@@ -3,12 +3,15 @@ package com.mgarzon.proyectoapp.model
 object BooksProvider {
     val listOfBooks = mutableListOf<Book> (
         Book(
-            "The Lord of the Rings",
+            "El Señor de los Anillos",
             "J. R. R. Tolkien",
-            "Fantasy",
-            "The Lord of the Rings is an epic high fantasy novel by the English author and scholar J. R. R. Tolkien. Set in Middle-earth, the world at some distant time in the past, the story began as a sequel to Tolkien's 1937 children's book The Hobbit, but eventually developed into a much larger work.",
+            "Fantasía",
+            "A pesar de ser un libro muy largo, es una lectura imprescindible. La historia es la base de la fantasía moderna" +
+                    " y ha inspirado a muchos autores. La historia es muy buena y los personajes son muy interesantes, aunque hay " +
+                    "una falta de personajes femeninos desarrollados. Es un libro muy descriptivo, lo que puede me llevó al " +
+                    "aburrimiento en ciertos puntos",
             false,
-            ""
+            "https://medios.lamarmota.es/senor-de-los-anillos.jpeg"
         ),
         Book(
             "The Hobbit",
@@ -27,12 +30,12 @@ object BooksProvider {
             ""
         ),
         Book(
-            "The Great Gatsby",
+            "El Gran Gatsby",
             "F. Scott Fitzgerald",
-            "Novel",
+            "Novela",
             "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.",
             false,
-            ""
+            "https://www.anagrama-ed.es/uploads/media/portadas/0001/15/b2834bc4ea71357c8b549dfccdd16d611c6586ea.jpeg"
         ),
         Book(
             "The Catcher in the Rye",

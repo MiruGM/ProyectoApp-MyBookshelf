@@ -30,14 +30,12 @@ class MainPageViewModel() : ViewModel() {
         }
     }
 
-    /*fun deleteBook(position: Int) {
+    fun deleteBook(position: Int) {
         viewModelScope.launch(Dispatchers.Main) {
-            _progressVisible.value = true
-            _books.value = withContext(Dispatchers.IO) {
+            _position.value = withContext(Dispatchers.IO) {
                 BooksProvider.deleteBook(position)
             }
-            _progressVisible.value = false
         }
-    }*/
+    }
 
 }

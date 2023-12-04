@@ -73,17 +73,16 @@ class MainPageFragment : Fragment(R.layout.fragment_main_page) {
     }
 
     fun onDelete(position: Int) {
-        /*viewModel.position.observe(viewLifecycleOwner) { position ->
             viewModel.deleteBook(position)
             adapter.notifyDataSetChanged()
-        }*/
-        GlobalScope.launch(Dispatchers.Main) {
-          val deleteBook = withContext(Dispatchers.IO) {
-              BooksProvider.deleteBook(position)
-          }
-            Toast.makeText(requireContext(), "Libro eliminado", Toast.LENGTH_SHORT).show()
-            adapter.notifyDataSetChanged()
-        }
+
+//        GlobalScope.launch(Dispatchers.Main) {
+//          val deleteBook = withContext(Dispatchers.IO) {
+//              BooksProvider.deleteBook(position)
+//          }
+//            Toast.makeText(requireContext(), "Libro eliminado", Toast.LENGTH_SHORT).show()
+//            adapter.notifyDataSetChanged()
+//        }
     }
 
     fun onEdit(position: Int) {

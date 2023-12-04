@@ -2,6 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#D1726B</color>
-    <color name="green">#A3C48D</color>
+
+    <color name="my_light_primary_custom">#e46463</color>
+    <color name="my_light_primary_variant">#974241</color>
+    <color name="my_light_on_primary_custom">#FFFFFFFF</color>
+
+    <color name="my_light_secondary_custom">#eab363</color>
+    <color name="my_light_secondary_variant">#b68b4d</color>
+    <color name="my_light_on_secondary_custom">#000000</color>
+
+    <color name="red">#e46463</color>
+    <color name="pink">#eeaf9d</color>
+    <color name="green">#bccfc9</color>
 </resources>

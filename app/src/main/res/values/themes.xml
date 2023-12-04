@@ -2,8 +2,64 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ProyectoApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/my_light_primary_custom</item>
+        <item name="colorPrimaryVariant">@color/my_light_primary_variant</item>
+        <item name="colorOnPrimary">@color/my_light_on_primary_custom</item>
+        <item name="colorSecondary">@color/my_light_secondary_custom</item>
+        <item name="colorSecondaryVariant">@color/my_light_secondary_variant</item>
+        <item name="colorOnSecondary">@color/my_light_on_secondary_custom</item>
+        <item name="android:fontFamily">@font/nunito_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:buttonStyle">     </item>
     </style>
 
+    <style name="mainButton" parent="Base.Theme.ProyectoApp">
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="secondButton" parent="Base.Theme.ProyectoApp">
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="mainTitle" parent="Base.Theme.ProyectoApp">
+        <item name="android:textSize">50dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/berkshire_swash</item>>
+
+    </style>
+
+    <style name="inAppTitle" parent="Base.Theme.ProyectoApp">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/berkshire_swash</item>>
+        <item name="android:textColor">@color/my_light_primary_custom</item>
+    </style>
+
+    <style name="inAppTitleBlack" parent="Base.Theme.ProyectoApp">
+        <item name="android:textSize">26dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/berkshire_swash</item>>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <!--style name="Base.Theme.ProyectoApp.Dark" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/my_dark_primary_custom</item>
+        <item name="colorPrimaryVariant">@color/my_dark_primary_variant</item>
+        <item name="colorOnPrimary">@color/my_dark_on_primary_custom</item>
+        <item name="colorSecondary">@color/my_dark_secondary_custom</item>
+        <item name="colorSecondaryVariant">@color/my_dark_secondary_variant</item>
+        <item name="colorOnSecondary">@color/my_dark_on_secondary_custom</item></style-->
+
     <style name="Theme.ProyectoApp" parent="Base.Theme.ProyectoApp" />
+
 </resources>
