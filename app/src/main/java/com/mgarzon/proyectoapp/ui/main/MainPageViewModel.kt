@@ -30,12 +30,12 @@ class MainPageViewModel() : ViewModel() {
         }
     }
 
-    fun deleteBook(position: Int) {
-        viewModelScope.launch(Dispatchers.Main) {
-            _position.value = withContext(Dispatchers.IO) {
-                BooksProvider.deleteBook(position)
-            }
-        }
-    }
+//    fun deleteBook(position: Int) {
+//        viewModelScope.launch(Dispatchers.Main) {
+//            _position.value = withContext(Dispatchers.IO) {
+//                BooksProvider.deleteBook(position)
+//            }
+//        }
+//    }
 
 }

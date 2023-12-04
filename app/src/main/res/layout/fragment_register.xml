@@ -108,8 +108,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:textAllCaps="true"
+                style="@style/mainButton"
                 android:text="Registrarse"
                 android:layout_marginTop="15dp"
                 />
@@ -120,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cancelar"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/green"/>
+                style="@style/secondButton"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
