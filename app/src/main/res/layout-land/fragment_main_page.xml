@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
+    android:background="@drawable/fondo2land"
     tools:context=".ui.main.MainPageFragment">
 
 
@@ -30,7 +30,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_marginTop="-20dp"
             app:cardCornerRadius="30dp"
             app:cardElevation="4dp"
@@ -43,7 +43,7 @@
                 style="@style/inAppTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:text="Bienvenido"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +52,7 @@
                 android:id="@+id/tvLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="95dp"
+                android:layout_marginTop="65dp"
                 android:fontFamily="@font/nunito_black"
                 android:text="Tus últimas lecturas"
                 android:textAlignment="center" />
