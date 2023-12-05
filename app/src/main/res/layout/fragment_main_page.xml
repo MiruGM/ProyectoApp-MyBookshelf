@@ -31,9 +31,9 @@
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_marginTop="-20dp"
             app:cardCornerRadius="30dp"
             app:cardElevation="4dp"
-            android:layout_marginTop="-20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints">
@@ -53,8 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="95dp"
-                android:textAlignment="center"
-                android:text="Tus últimas lecturas" />
+                android:text="Tus últimas lecturas"
+                android:textAlignment="center" />
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -71,17 +71,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="20dp"
         android:padding="5dp"
         tools:listitem="@layout/view_book" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

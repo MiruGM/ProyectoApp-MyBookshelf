@@ -10,13 +10,8 @@ import androidx.navigation.fragment.findNavController
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.FragmentMainPageBinding
 import com.mgarzon.proyectoapp.model.Book
-import com.mgarzon.proyectoapp.model.BooksProvider
-import com.mgarzon.proyectoapp.ui.AddEditFragment
+import com.mgarzon.proyectoapp.ui.addedit.AddEditFragment
 import com.mgarzon.proyectoapp.ui.detail.DetailFragment
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 class MainPageFragment : Fragment(R.layout.fragment_main_page) {
@@ -73,16 +68,17 @@ class MainPageFragment : Fragment(R.layout.fragment_main_page) {
     }
 
     fun onDelete(position: Int) {
-//        viewModel.deleteBook(position)
-//        adapter.notifyDataSetChanged()
+        viewModel.deleteBook(position)
+        Toast.makeText(requireContext(), "Libro eliminado", Toast.LENGTH_SHORT).show()
+        adapter.notifyDataSetChanged()
 
-        GlobalScope.launch(Dispatchers.Main) {
+        /*GlobalScope.launch(Dispatchers.Main) {
           val deleteBook = withContext(Dispatchers.IO) {
               BooksProvider.deleteBook(position)
           }
             Toast.makeText(requireContext(), "Libro eliminado", Toast.LENGTH_SHORT).show()
             adapter.notifyDataSetChanged()
-        }
+        }*/
     }
 
     fun onEdit(position: Int) {

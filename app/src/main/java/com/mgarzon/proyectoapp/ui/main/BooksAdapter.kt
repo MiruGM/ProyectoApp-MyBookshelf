@@ -21,9 +21,6 @@ class BooksAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(books[position])
-//        holder.itemView.setOnClickListener {
-//            listener(books[position])
-//        }
         holder.binding.title.setOnClickListener { listener(books[position]) }
         holder.binding.btnDelete.setOnClickListener { context.onDelete(position) }
         holder.binding.btnEdit.setOnClickListener { context.onEdit(position) }

@@ -17,9 +17,6 @@ class MainPageViewModel() : ViewModel() {
     private val _books = MutableLiveData<List<Book>>(emptyList())
     val books: LiveData<List<Book>> get() = _books
 
-    private val _position = MutableLiveData<Int>()
-    val position: LiveData<Int> get() = _position
-
     init {
         viewModelScope.launch(Dispatchers.Main) {
             _progressVisible.value = true
@@ -30,12 +27,12 @@ class MainPageViewModel() : ViewModel() {
         }
     }
 
-//    fun deleteBook(position: Int) {
-//        viewModelScope.launch(Dispatchers.Main) {
-//            _position.value = withContext(Dispatchers.IO) {
-//                BooksProvider.deleteBook(position)
-//            }
-//        }
-//    }
+    fun deleteBook(position: Int) {
+        viewModelScope.launch(Dispatchers.Main) {
+            withContext(Dispatchers.IO) {
+                BooksProvider.deleteBook(position)
+            }
+        }
+    }
 
 }

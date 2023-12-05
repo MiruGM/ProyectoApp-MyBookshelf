@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/addEditFragment"
-        android:name="com.mgarzon.proyectoapp.ui.AddEditFragment"
+        android:name="com.mgarzon.proyectoapp.ui.addedit.AddEditFragment"
         android:label="fragment_add_edit"
         tools:layout="@layout/fragment_add_edit" >
         <action

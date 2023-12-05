@@ -1,8 +1,9 @@
-package com.mgarzon.proyectoapp.ui
+package com.mgarzon.proyectoapp.ui.addedit
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.FragmentAddEditBinding
 import com.mgarzon.proyectoapp.model.Book
@@ -18,8 +19,11 @@ class AddEditFragment : Fragment(R.layout.fragment_add_edit) {
         const val POS = "position"
     }
 
+    private val viewModel: AddEditViewModel by activityViewModels()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         val binding = FragmentAddEditBinding.bind(view).apply {
             val position = arguments?.getInt(POS)
@@ -36,7 +40,7 @@ class AddEditFragment : Fragment(R.layout.fragment_add_edit) {
 
             btnOk.setOnClickListener {
                 //Creo el libro a guardar
-                val book = Book (
+                val book = Book(
                     etTitle.text.toString(),
                     etAuthor.text.toString(),
                     etGenre.text.toString(),
@@ -46,17 +50,21 @@ class AddEditFragment : Fragment(R.layout.fragment_add_edit) {
                 )
                 // Guardo el libro nuevo/editado en la lista
                 if (position != -1) {
-                    GlobalScope.launch(Dispatchers.Main) {
+                    viewModel.editBook(book, position)
+
+                    /*GlobalScope.launch(Dispatchers.Main) {
                         val createBook = withContext(Dispatchers.IO) {
                             BooksProvider.editBook(position, book)
                         }
-                    }
+                    }*/
                 } else {
-                    GlobalScope.launch(Dispatchers.Main) {
+                    viewModel.addBook(book)
+
+                    /*GlobalScope.launch(Dispatchers.Main) {
                         val createBook = withContext(Dispatchers.IO) {
                             BooksProvider.addBook(book)
                         }
-                    }
+                    }*/
                 }
                 //Añadir a la pila para volver atrás
                 parentFragmentManager.popBackStack()
