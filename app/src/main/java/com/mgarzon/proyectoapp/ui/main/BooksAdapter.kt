@@ -3,6 +3,7 @@ package com.mgarzon.proyectoapp.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.ViewBookBinding
@@ -22,8 +23,26 @@ class BooksAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(books[position])
         holder.binding.title.setOnClickListener { listener(books[position]) }
-        holder.binding.btnDelete.setOnClickListener { context.onDelete(position) }
-        holder.binding.btnEdit.setOnClickListener { context.onEdit(position) }
+        holder.binding.btnMoreOptions.setOnClickListener {
+            val popupMenu = PopupMenu(context.requireContext(), it)
+            popupMenu.inflate(R.menu.popup_menu)
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.action_edit -> {
+                        context.onEdit(position)
+                        true
+                    }
+                    R.id.action_delete -> {
+                        context.onDelete(position)
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popupMenu.show()
+        }
+        /*holder.binding.btnDelete.setOnClickListener { context.onDelete(position) }
+        holder.binding.btnEdit.setOnClickListener { context.onEdit(position) }*/
     }
 
     override fun getItemCount(): Int = books.size
@@ -33,6 +52,7 @@ class BooksAdapter (
 
         fun bind (book : Book) {
             binding.title.text = book.title
+
         }
     }
 

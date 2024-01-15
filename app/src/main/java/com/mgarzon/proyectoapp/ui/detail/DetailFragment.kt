@@ -4,9 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -20,7 +19,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         const val BOOK = "book"
     }
 
-    private val viewModel : DetailViewModel by viewModels() {
+    private val viewModel: DetailViewModel by viewModels() {
         DetailViewModelFactory(arguments?.getParcelable<Book>(BOOK)!!)
     }
 
@@ -28,7 +27,13 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentDetailBinding.bind(view).apply {
-            val book = arguments?.getParcelable<Book>("book").let {book ->
+            //Botón para volver a la lista
+            btnBack.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            //Cargar el libro seleccionado
+            val book = arguments?.getParcelable<Book>("book").let { book ->
                 tvTitleT.text = book?.title
                 tvAuthorC.text = book?.author
                 tvGenreC.text = book?.genre
@@ -38,22 +43,25 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 } else {
                     tvReadAgainC.text = "SI"
                 }
-                Glide.with(requireContext()).load(book?.urlCover).into(ivCover)
+                Glide.with(requireContext()).load(book?.urlCover).into(ivCover as ImageView)
+                userRating?.rating = book?.rating ?: 0f
+
 
                 btnMore.setOnClickListener {
                     searchOnline(book?.title)
                 }
 
-                btnBack.setOnClickListener {
-                    findNavController().navigate(R.id.action_detailFragment_to_mainPageFragment)
+                btnFav?.setOnClickListener {
+
                 }
+
             }
         }
     }
+}
 
-    private fun searchOnline(title: String?) {
-        val webpage: Uri = Uri.parse("https://www.google.com/search?q=$title")
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
-        startActivity(intent)
-    }
+private fun searchOnline(title: String?) {
+    val webpage: Uri = Uri.parse("https://www.google.com/search?q=$title")
+    val intent = Intent(Intent.ACTION_VIEW, webpage)
+    //startActivity(intent)
 }

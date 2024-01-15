@@ -36,6 +36,7 @@ class AddEditFragment : Fragment(R.layout.fragment_add_edit) {
                 etReview.setText(BooksProvider.listOfBooks[position].review)
                 etURLCover.setText(BooksProvider.listOfBooks[position].urlCover)
                 swReadAgain.isChecked = BooksProvider.listOfBooks[position].readAgain
+                userRating?.rating = BooksProvider.listOfBooks[position].rating
             }
 
             btnOk.setOnClickListener {
@@ -46,31 +47,21 @@ class AddEditFragment : Fragment(R.layout.fragment_add_edit) {
                     etGenre.text.toString(),
                     etReview.text.toString(),
                     swReadAgain.isChecked,
-                    etURLCover.text.toString()
+                    etURLCover.text.toString(),
+                    userRating?.rating ?: 0f
                 )
+
                 // Guardo el libro nuevo/editado en la lista
                 if (position != -1) {
                     viewModel.editBook(book, position)
-
-                    /*GlobalScope.launch(Dispatchers.Main) {
-                        val createBook = withContext(Dispatchers.IO) {
-                            BooksProvider.editBook(position, book)
-                        }
-                    }*/
                 } else {
                     viewModel.addBook(book)
-
-                    /*GlobalScope.launch(Dispatchers.Main) {
-                        val createBook = withContext(Dispatchers.IO) {
-                            BooksProvider.addBook(book)
-                        }
-                    }*/
                 }
                 //Añadir a la pila para volver atrás
                 parentFragmentManager.popBackStack()
             }
 
-            btnCancel.setOnClickListener {
+            btnBack?.setOnClickListener {
                 parentFragmentManager.popBackStack()
             }
         }

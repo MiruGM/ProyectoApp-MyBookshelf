@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_addEditFragment"
             app:destination="@id/addEditFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_recomendedDetailFragment"
+            app:destination="@id/recomendedDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -56,6 +59,14 @@
         tools:layout="@layout/fragment_add_edit" >
         <action
             android:id="@+id/action_addEditFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recomendedDetailFragment"
+        android:name="com.mgarzon.proyectoapp.ui.RecommendedDetailFragment"
+        android:label="RecomendedDetailFragment" >
+        <action
+            android:id="@+id/action_recomendedDetailFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
     </fragment>
 </navigation>

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ProyectoApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ProyectoApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/my_light_primary_custom</item>
         <item name="colorPrimaryVariant">@color/my_light_primary_variant</item>
@@ -10,22 +10,21 @@
         <item name="colorOnSecondary">@color/my_light_on_secondary_custom</item>
         <item name="android:fontFamily">@font/nunito_semibold</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:buttonStyle">     </item>
     </style>
 
     <style name="mainButton" parent="Base.Theme.ProyectoApp">
         <item name="android:textSize">18sp</item>
-        <item name="android:padding">15dp</item>
+        <item name="android:padding">5dp</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:background">@drawable/btn_background_red</item>
         <item name="android:fontFamily">@font/nunito_black</item>
     </style>
 
     <style name="secondButton" parent="Base.Theme.ProyectoApp">
         <item name="android:textSize">18sp</item>
-        <item name="android:padding">15dp</item>
+        <item name="android:padding">5dp</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:backgroundTint">@color/green</item>
+        <item name="android:background">@drawable/btn_background_green</item>
         <item name="android:fontFamily">@font/nunito_black</item>
     </style>
 
@@ -48,6 +47,15 @@
         <item name="android:textAlignment">center</item>
         <item name="android:fontFamily">@font/berkshire_swash</item>>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+<!-- Estilo para que el dialogo del modal inferior tenga las esquinas transparentes -->
+    <style name="BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
 

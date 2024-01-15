@@ -1,164 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--include
+        android:id="@+id/toolbar"
+        layout="@layout/elem_custom_toolbar1"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /-->
+
+
+    <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp"
-        tools:context=".ui.detail.DetailFragment"
-        >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvTitleT"
+        <ImageButton
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Title"
-            style="@style/inAppTitleBlack"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_weight="0"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/baseline_arrow_back" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btnFav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="4dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleT">
-            <ImageView
-                android:id="@+id/ivCover"
-                android:layout_width="150dp"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                />
-        </androidx.cardview.widget.CardView>
+            android:layout_weight="0"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/baseline_favorite_border_24" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView">
+            android:layout_height="0dp"
+            android:padding="15dp"
+            tools:context=".ui.detail.DetailFragment">
+
+            <TextView
+                android:id="@+id/tvTitleT"
+                style="@style/inAppTitleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivCover"
+                android:layout_width="130dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@color/light_pink"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleT"
+                app:shapeAppearanceOverlay="@style/roundedCornerImageView" />
 
             <TextView
                 android:id="@+id/tvAuthorT"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Autor: " />
+                android:text="Autor: "
+                app:layout_constraintStart_toEndOf="@+id/ivCover"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleT" />
 
             <TextView
                 android:id="@+id/tvAuthorC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="contenido" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+                android:text="..."
+                app:layout_constraintStart_toStartOf="@+id/tvAuthorT"
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthorT" />
 
             <TextView
                 android:id="@+id/tvGenreT"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Género: " />
+                android:text="Género: "
+                app:layout_constraintStart_toEndOf="@+id/ivCover"
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthorC" />
 
             <TextView
                 android:id="@+id/tvGenreC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="contenido" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+                android:text="..."
+                app:layout_constraintStart_toStartOf="@+id/tvGenreT"
+                app:layout_constraintTop_toBottomOf="@+id/tvGenreT" />
 
             <TextView
                 android:id="@+id/tvReviewT"
                 android:layout_width="120dp"
-
-                android:fontFamily="@font/nunito_black"
                 android:layout_height="wrap_content"
-                android:text="Reseña: " />
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="Reseña: "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivCover" />
 
             <TextView
                 android:id="@+id/tvReviewC"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="contenido" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+                android:text="..."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvReviewT"
+                app:layout_constraintTop_toBottomOf="@+id/tvReviewT" />
 
             <TextView
                 android:id="@+id/tvReadAgainT"
-                android:layout_width="160dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Volvería a leerlo: " />
+                android:text="Volvería a leerlo: "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReviewC" />
 
             <TextView
                 android:id="@+id/tvReadAgainC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="contenido" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnMore"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="+info"
-            style="@style/secondButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:text="atrás"
-            style="@style/mainButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnMore" />
+                android:layout_marginTop="16dp"
+                android:text="..."
+                app:layout_constraintStart_toEndOf="@+id/tvReadAgainT"
+                app:layout_constraintTop_toBottomOf="@+id/tvReviewC" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="Mi opinión: "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReadAgainT" />
 
-</ScrollView>
+            <RatingBar
+                android:id="@+id/userRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="0.0"
+                android:isIndicator="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+
+            <Button
+                android:id="@+id/btnMore"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/nunito_black"
+                android:text="más información"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userRating" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

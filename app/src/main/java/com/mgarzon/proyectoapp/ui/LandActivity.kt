@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.ActivityLandBinding
 
 class LandActivity : AppCompatActivity() {
@@ -21,7 +20,7 @@ class LandActivity : AppCompatActivity() {
     fun delayStartIntent() {
         val handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this@LandActivity, MainActivity::class.java)
+            val intent = Intent(this@LandActivity, NoMenuMainActivity::class.java)
             startActivity(intent)
         }, 3000)
 

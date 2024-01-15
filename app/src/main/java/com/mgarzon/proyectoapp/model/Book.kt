@@ -10,5 +10,6 @@ data class Book (
     val genre: String,
     val review: String,
     val readAgain: Boolean,
-    val urlCover: String
+    val urlCover: String,
+    val rating: Float = 0f
 ): Parcelable

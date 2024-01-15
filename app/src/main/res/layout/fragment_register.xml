@@ -5,124 +5,136 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
-    android:gravity="center"
-    tools:context=".ui.LoginFragment">
+    android:background="@drawable/fondo3"
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    tools:context=".ui.LoginFragment"
+    >
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="630dp"
-        android:layout_marginBottom="-30dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_background_round_white"
+        android:padding="20dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvBienvenido"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp">
+            android:layout_height="wrap_content"
+            style="@style/inAppTitle"
+            android:text="Registro"/>
 
-            <TextView
-                android:id="@+id/tvBienvenido"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/light_pink"
+            android:hint="Usuario"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/inAppTitle"
-                android:text="Registro"/>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre de Usuario"
-                android:layout_marginTop="15dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfMail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Correo Electrónico"
-                android:layout_marginTop="5dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etMail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Contraseña"
-                app:endIconMode="password_toggle"
-                android:layout_marginTop="5dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfPassword2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Repita la Contraseña"
-                app:endIconMode="password_toggle"
-                android:layout_marginTop="5dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <CheckBox
-                android:id="@+id/chkPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recordar contraseña"
-                android:layout_marginTop="8dp"/>
-
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/mainButton"
-                android:text="Registrarse"
-                android:layout_marginTop="15dp"
+                android:text=""
                 />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btnCancel"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/light_pink"
+            android:layout_marginTop="10dp"
+            android:hint="Nombre ">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cancelar"
-                android:layout_marginTop="8dp"
-                style="@style/secondButton"/>
-        </LinearLayout>
+                android:text=""
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.cardview.widget.CardView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/light_pink"
+            android:hint="Correo Electrónico"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/light_pink"
+            android:hint="Contraseña"
+            app:endIconMode="password_toggle"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text=""
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfPassword2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repita la Contraseña"
+            app:boxBackgroundColor="@color/light_pink"
+            app:endIconMode="password_toggle"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text=""
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/chkPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recordar contraseña"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/mainButton"
+            android:text="Registrarse"
+            android:layout_marginTop="15dp"
+            />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            style="@style/secondButton"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

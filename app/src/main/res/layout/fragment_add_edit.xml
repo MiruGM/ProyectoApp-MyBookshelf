@@ -5,133 +5,168 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
     android:gravity="center"
     tools:context=".ui.LoginFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_marginBottom="-30dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="4dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="0"
+            android:src="@drawable/baseline_arrow_back" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="0"
+            android:src="@drawable/baseline_check" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvEditCrear"
+                style="@style/inAppTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:orientation="vertical">
+                android:text="Crear Reseña" />
 
-                <TextView
-                    android:id="@+id/tvEditCrear"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/light_pink"
+                android:layout_marginTop="15dp"
+                android:hint="Título">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/inAppTitle"
-                    android:layout_marginTop="24dp"
-                    android:text="Crear Libro" />
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tfTitle"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/light_pink"
+                android:layout_marginTop="10dp"
+                android:hint="Autor/a">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAuthor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:hint="Título">
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/light_pink"
+                android:layout_marginTop="10dp"
+                android:hint="Género">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tfAuthor"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGenre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:hint="Autor/a">
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etAuthor"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/light_pink"
+                android:layout_marginTop="10dp"
+                android:hint="Reseña">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tfGenre"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:hint="Género">
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etGenre"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfUrlCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/light_pink"
+                android:layout_marginTop="10dp"
+                android:hint="URL de la portada">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tfReview"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etURLCover"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:hint="Reseña">
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etReview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/swReadAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_black"
+                android:textColor="@color/grey"
+                android:text="Volvería a leerlo" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tfUrlCover"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:hint="URL de la portada">
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="Mi valoración: " />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etURLCover"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <RatingBar
+                android:id="@+id/userRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="0.0" />
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/swReadAgain"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Volvería a leerlo" />
+        </LinearLayout>
+    </ScrollView>
 
-                <Button
-                    android:id="@+id/btnOk"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    style="@style/mainButton"
-                    android:text="Aceptar" />
 
-                <Button
-                    android:id="@+id/btnCancel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="50dp"
-                    style="@style/secondButton"
-                    android:text="Cancelar" />
-            </LinearLayout>
-        </ScrollView>
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

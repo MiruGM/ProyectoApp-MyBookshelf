@@ -11,7 +11,8 @@ object BooksProvider {
                     "una falta de personajes femeninos desarrollados. Es un libro muy descriptivo, lo que puede me llevó al " +
                     "aburrimiento en ciertos puntos",
             false,
-            "https://medios.lamarmota.es/senor-de-los-anillos.jpeg"
+            "https://medios.lamarmota.es/senor-de-los-anillos.jpeg",
+            4.5f
         ),
         Book(
             "El Gran Gatsby",
@@ -21,7 +22,8 @@ object BooksProvider {
                     "pensar. A pesar de todo la novela está muy escrita y ofrece una visión profunda que lo que fueron los felices años 20 " +
                     "en Estados Unidos.",
             false,
-            "https://www.anagrama-ed.es/uploads/media/portadas/0001/15/b2834bc4ea71357c8b549dfccdd16d611c6586ea.jpeg"
+            "https://www.anagrama-ed.es/uploads/media/portadas/0001/15/b2834bc4ea71357c8b549dfccdd16d611c6586ea.jpeg",
+            2.0f
         ),
         Book(
             "Frankenstein o el moderno Prometeo",
@@ -32,7 +34,8 @@ object BooksProvider {
                     "pero de dos metros y medio de altura y aspecto repulsivo. Es una novala que hace pensar en los frivolo de la humanidad y en " +
                     "el sentimiento de dios de algunas personas.",
             true,
-            "https://static.serlogal.com/imagenes_big/9788439/978843973080.JPG"
+            "https://static.serlogal.com/imagenes_big/9788439/978843973080.JPG",
+            3.0f
         ),
         Book(
             "1984",
@@ -42,7 +45,8 @@ object BooksProvider {
                     "aspectos de la vida de sus ciudadanos. La novela es muy interesante y te hace pensar en la sociedad actual y en la " +
                     "posibilidad de que se convierta en una distopía como la de la novela.",
             true,
-            "https://imagessl4.casadellibro.com/a/l/t7/44/9788499890944.jpg"
+            "https://imagessl4.casadellibro.com/a/l/t7/44/9788499890944.jpg",
+            5.0f
         ),
         Book(
             "El Guardian entre el Centeno",
@@ -52,7 +56,8 @@ object BooksProvider {
                     "la novela provocó numerosas controversias por su lenguaje provocador y por retratar sin tapujos los conflictos en la adolescencia, " +
                     "como el acoso y la sexualidad",
             false,
-            "https://www.cartv.es/thumbs/fullwidth/2021-07/el-guardian-entre-el-centeno-portada-240.jpg"
+            "https://www.cartv.es/thumbs/fullwidth/2021-07/el-guardian-entre-el-centeno-portada-240.jpg",
+            0.0f
         ),
         Book(
             "Orgullo Y Prejuicio",
@@ -62,7 +67,8 @@ object BooksProvider {
                     "que se enamoran a pesar de las dificultades que les impone la sociedad de la época. Es una novela romántica muy interesante y que " +
                     "te hace pensar en la sociedad de la época.",
             true,
-            "https://cdn.agapea.com/Alianza-Editorial/Orgullo-y-prejuicio-i1n17428974.jpg"
+            "https://cdn.agapea.com/Alianza-Editorial/Orgullo-y-prejuicio-i1n17428974.jpg",
+            3.5f
         ),
         Book(
             "Yo, robot",
@@ -74,7 +80,8 @@ object BooksProvider {
                     "I, Robot: The Rest of the Robots, con otros relatos adicionales. En 1990 se publicó una edición revisada en el Reino Unido, " +
                     "bajo el título The Complete Robot, con todos los relatos de las ediciones anteriores y otros adicionales.",
             true,
-            "https://www.cartv.es/thumbs/fullwidth/2021-07/el-guardian-entre-el-centeno-portada-240.jpg"
+            "https://www.cartv.es/thumbs/fullwidth/2021-07/el-guardian-entre-el-centeno-portada-240.jpg",
+            1.5f
         ),
         Book(
             "Ana Karenina",
@@ -84,7 +91,8 @@ object BooksProvider {
                     "un gran éxito de público, sino que también obtuvo una gran consideración por parte de la crítica. Tolstói consideraba a Ana " +
                     "Karenina su primera novela verdadera. La novela es muy interesante y te hace pensar en la sociedad de la época.",
             true,
-            "https://cdn.agapea.com/Austral/Ana-Karenina-i1n15399766.jpg"
+            "https://cdn.agapea.com/Austral/Ana-Karenina-i1n15399766.jpg",
+            4.0f
         ),
         Book(
             "El Principito",
@@ -95,7 +103,8 @@ object BooksProvider {
                     "entre ellos el sistema de lectura braille. Ha vendido más de 140 millones de copias en todo el mundo, convirtiéndose en uno de los " +
                     "libros más vendidos de la historia. Es una novela muy interesante y que te hace pensar en la sociedad actual.",
             false,
-            "https://multimedia.dideco.es/img/literatura/EAN_9788478887200-5.jpg"
+            "https://multimedia.dideco.es/img/literatura/EAN_9788478887200-5.jpg",
+            5.0f
         ),
         Book(
             "Don Quijote de la Mancha",
@@ -105,7 +114,8 @@ object BooksProvider {
                     "El ingenioso hidalgo don Quijote de la Mancha a comienzos de 1605, es la obra más destacada de la literatura española y una de las " +
                     "principales de la literatura universal.",
             true,
-            "https://simehbucket.s3.amazonaws.com/images/5a2d2f9c29b2605bc4176f80682b1fdf-full.jpg"
+            "https://simehbucket.s3.amazonaws.com/images/5a2d2f9c29b2605bc4176f80682b1fdf-full.jpg",
+            2.0f
         ),
         Book(
             "Crimen y Castigo",
@@ -116,7 +126,8 @@ object BooksProvider {
                     "un estudiante ruso que decide asesinar a una usurera para demostrar su teoría sobre la existencia de personas que pueden cometer " +
                     "crímenes y delitos para luego utilizar el dinero o los bienes robados en obras de caridad.",
             false,
-            "https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/6254541d8ae4df16d4e69bc8_6034d7d1f3e0f54529b2b1a1_Crimen-y-castigo-fiodor-dostoyevski-editorial-alma.jpeg"
+            "https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/6254541d8ae4df16d4e69bc8_6034d7d1f3e0f54529b2b1a1_Crimen-y-castigo-fiodor-dostoyevski-editorial-alma.jpeg",
+            3.0f
         ),
         Book (
             "El nombre de la rosa",
@@ -126,7 +137,8 @@ object BooksProvider {
                     "de Guillermo de Baskerville para esclarecer una serie de crímenes ocurridos en una abadía benedictina en el año 1327. La " +
                     "novela fue llevada al cine en 1986 por Jean-Jacques Annaud con Sean Connery como protagonista.",
             true,
-            "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/201604/25/00106523197116____1__640x640.jpg"
+            "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/201604/25/00106523197116____1__640x640.jpg",
+            0.5f
         )
 
 

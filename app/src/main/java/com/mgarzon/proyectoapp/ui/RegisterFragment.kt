@@ -1,5 +1,6 @@
 package com.mgarzon.proyectoapp.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,9 +25,12 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
 
                 if(user.isNotEmpty() && mail.isNotEmpty() && password.isNotEmpty() && password2.isNotEmpty()){
                     if(password == password2){
-                        findNavController().navigate(
-                            R.id.action_registerFragment_to_mainPageFragment
-                        )
+                        val intent = Intent(activity, MainActivity::class.java)
+                        startActivity(intent)
+
+                        /*findNavController().navigate(
+                                R.id.action_registerFragment_to_mainPageFragment
+                            )*/
                     }else{
                         etPassword2.error = "Las contraseñas no coinciden"
                     }
