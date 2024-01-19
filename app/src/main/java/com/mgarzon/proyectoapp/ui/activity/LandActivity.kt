@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui
+package com.mgarzon.proyectoapp.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +20,7 @@ class LandActivity : AppCompatActivity() {
     fun delayStartIntent() {
         val handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this@LandActivity, NoMenuMainActivity::class.java)
+            val intent = Intent(this@LandActivity, LoginActivity::class.java)
             startActivity(intent)
         }, 3000)
 

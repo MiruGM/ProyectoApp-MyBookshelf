@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.detail
+package com.mgarzon.proyectoapp.ui.fragment.detail
 
 import android.content.Intent
 import android.net.Uri

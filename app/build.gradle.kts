@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -11,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.mgarzon.proyectoapp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -48,11 +49,15 @@ dependencies {
     //Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
     //Meterial Design
-    //Material design
-    implementation("com.google.android.material:material:1.12.0-alpha02")
+    implementation("com.google.android.material:material:1.12.0-alpha03")
     implementation("com.google.android.material:material:1.11.0")
-    //CardView?
-    implementation ("androidx.cardview:cardview:1.0.0")
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

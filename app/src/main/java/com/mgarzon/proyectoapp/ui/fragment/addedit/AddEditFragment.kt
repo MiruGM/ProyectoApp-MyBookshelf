@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.addedit
+package com.mgarzon.proyectoapp.ui.fragment.addedit
 
 import android.os.Bundle
 import android.view.View

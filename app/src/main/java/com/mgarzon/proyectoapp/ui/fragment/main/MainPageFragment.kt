@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.main
+package com.mgarzon.proyectoapp.ui.fragment.main
 
 import android.app.Activity
 import android.os.Bundle
@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.NonNull
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
@@ -16,9 +15,9 @@ import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.FragmentMainPageBinding
 import com.mgarzon.proyectoapp.model.Book
 import com.mgarzon.proyectoapp.model.RecBook
-import com.mgarzon.proyectoapp.ui.RecommendedDetailFragment
-import com.mgarzon.proyectoapp.ui.addedit.AddEditFragment
-import com.mgarzon.proyectoapp.ui.detail.DetailFragment
+import com.mgarzon.proyectoapp.ui.fragment.RecommendedDetailFragment
+import com.mgarzon.proyectoapp.ui.fragment.addedit.AddEditFragment
+import com.mgarzon.proyectoapp.ui.fragment.detail.DetailFragment
 
 
 class MainPageFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.main
+package com.mgarzon.proyectoapp.ui.fragment.main
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.main
+package com.mgarzon.proyectoapp.ui.fragment.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +23,7 @@ class RecommendationsAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendationsAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate((R.layout.view_recommended_book), parent, false)
         return ViewHolder(view)
     }

@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.UserFragment">
+        tools:context=".ui.fragment.UserFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="70dp"
-                android:text="Miranda" />
+                android:text="Nombre" />
 
             <TextView
                 android:id="@+id/tvUser"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/nunito_black"
-                android:text="mira_mira"
+                android:text="@string/user"
                 android:textSize="14sp" />
 
             <LinearLayout

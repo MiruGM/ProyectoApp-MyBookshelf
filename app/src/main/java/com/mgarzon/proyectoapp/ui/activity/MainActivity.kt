@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui
+package com.mgarzon.proyectoapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +7,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.ActivityMainBinding
-import com.mgarzon.proyectoapp.ui.detail.DetailFragment
-import com.mgarzon.proyectoapp.ui.main.MainPageFragment
+import com.mgarzon.proyectoapp.ui.fragment.NotificationsFragment
+import com.mgarzon.proyectoapp.ui.fragment.UserFragment
+import com.mgarzon.proyectoapp.ui.fragment.main.MainPageFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,10 +24,6 @@ class MainActivity : AppCompatActivity() {
 
             //Eliminar el click del elemento vacío del menú inferior
             bottomNavigationView?.menu?.getItem(3)?.isEnabled = false
-
-            //Mostrar el fragmento MainPageFragment por primera vez y ocultar menú
-            //replaceFragment(MainPageFragment())
-            //coordinatorLayout?.visibility = View.GONE
 
             //Navegar entre los fragmentos del menú inferior
             bottomNavigationView?.setOnItemSelectedListener { item ->

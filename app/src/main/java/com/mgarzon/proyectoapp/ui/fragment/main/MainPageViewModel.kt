@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.main
+package com.mgarzon.proyectoapp.ui.fragment.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

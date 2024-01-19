@@ -1,4 +1,4 @@
-package com.mgarzon.proyectoapp.ui.addedit
+package com.mgarzon.proyectoapp.ui.fragment.addedit
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

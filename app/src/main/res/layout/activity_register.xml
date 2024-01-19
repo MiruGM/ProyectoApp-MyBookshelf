@@ -2,141 +2,124 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
-
-    tools:context=".ui.LoginFragment"
-    >
-
+    tools:context=".ui.activity.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/bottom_background_round_white"
+        android:orientation="vertical"
         android:padding="20dp"
-        android:layout_marginTop="80dp"
-        android:orientation="vertical">
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/tvBienvenido"
+            style="@style/inAppTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/inAppTitle"
-            android:text="Registro"/>
+            android:layout_marginVertical="20dp"
+            android:text="Registro" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/light_pink"
+
             android:hint="Usuario"
-            android:layout_marginTop="15dp">
+            app:boxBackgroundColor="@color/light_pink">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                />
+                android:text="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/light_pink"
             android:layout_marginTop="10dp"
-            android:hint="Nombre ">
+            android:hint="Nombre "
+            app:boxBackgroundColor="@color/light_pink">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                />
+                android:text="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/light_pink"
+            android:layout_marginTop="10dp"
             android:hint="Correo Electrónico"
-            android:layout_marginTop="10dp">
+            app:boxBackgroundColor="@color/light_pink">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                />
+                android:text="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/light_pink"
+            android:layout_marginTop="10dp"
             android:hint="Contraseña"
-            app:endIconMode="password_toggle"
-            android:layout_marginTop="10dp">
+            app:boxBackgroundColor="@color/light_pink"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:text=""
-                />
+                android:text="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfPassword2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="Repita la Contraseña"
             app:boxBackgroundColor="@color/light_pink"
-            app:endIconMode="password_toggle"
-            android:layout_marginTop="10dp">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:text=""
-                />
+                android:text="" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <CheckBox
-            android:id="@+id/chkPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recordar contraseña"
-            android:layout_marginTop="8dp"/>
 
         <Button
             android:id="@+id/btnRegister"
+            style="@style/mainButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/mainButton"
-            android:text="Registrarse"
-            android:layout_marginTop="15dp"
-            />
+            android:layout_marginVertical="15dp"
+            android:text="Registrarse" />
 
         <Button
             android:id="@+id/btnCancel"
+            style="@style/secondButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cancelar"
-            style="@style/secondButton"
-            android:layout_marginTop="20dp"
-            />
+            android:layout_marginBottom="20dp"
+            android:text="Cancelar" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-

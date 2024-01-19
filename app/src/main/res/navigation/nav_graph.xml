@@ -3,22 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.mgarzon.proyectoapp.ui.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_mainPageFragment"
-            app:destination="@id/mainPageFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-    </fragment>
+    app:startDestination="@id/mainPageFragment">
     <fragment
         android:id="@+id/mainPageFragment"
-        android:name="com.mgarzon.proyectoapp.ui.main.MainPageFragment"
+        android:name="com.mgarzon.proyectoapp.ui.fragment.main.MainPageFragment"
         android:label="fragment_main_page"
         tools:layout="@layout/fragment_main_page" >
         <action
@@ -32,20 +20,8 @@
             app:destination="@id/recomendedDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.mgarzon.proyectoapp.ui.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-        <action
-            android:id="@+id/action_registerFragment_to_mainPageFragment"
-            app:destination="@id/mainPageFragment" />
-        <action
-            android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/detailFragment"
-        android:name="com.mgarzon.proyectoapp.ui.detail.DetailFragment"
+        android:name="com.mgarzon.proyectoapp.ui.fragment.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
@@ -54,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/addEditFragment"
-        android:name="com.mgarzon.proyectoapp.ui.addedit.AddEditFragment"
+        android:name="com.mgarzon.proyectoapp.ui.fragment.addedit.AddEditFragment"
         android:label="fragment_add_edit"
         tools:layout="@layout/fragment_add_edit" >
         <action
@@ -63,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/recomendedDetailFragment"
-        android:name="com.mgarzon.proyectoapp.ui.RecommendedDetailFragment"
+        android:name="com.mgarzon.proyectoapp.ui.fragment.RecommendedDetailFragment"
         android:label="RecomendedDetailFragment" >
         <action
             android:id="@+id/action_recomendedDetailFragment_to_mainPageFragment"
