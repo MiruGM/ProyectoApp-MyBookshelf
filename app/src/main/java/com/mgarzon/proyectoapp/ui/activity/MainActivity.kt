@@ -1,8 +1,10 @@
 package com.mgarzon.proyectoapp.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.mgarzon.proyectoapp.R
@@ -10,6 +12,7 @@ import com.mgarzon.proyectoapp.databinding.ActivityMainBinding
 import com.mgarzon.proyectoapp.ui.fragment.NotificationsFragment
 import com.mgarzon.proyectoapp.ui.fragment.UserFragment
 import com.mgarzon.proyectoapp.ui.fragment.main.MainPageFragment
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,14 +32,26 @@ class MainActivity : AppCompatActivity() {
             bottomNavigationView?.setOnItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.home -> {
+                        //Cambiar el fondo
+                        val layout = findViewById<View>(R.id.constrainLayout) as ConstraintLayout
+                        layout.setBackgroundResource(R.drawable.fondo3)
+                        //Cambiar el fragmento
                         replaceFragment(MainPageFragment())
                         true
                     }
                     R.id.notif -> {
+                        //Cambiar el fondo
+                        val layout = findViewById<View>(R.id.constrainLayout) as ConstraintLayout
+                        layout.setBackgroundResource(R.drawable.fondo3)
+                        //Cambiar el frarmento
                         replaceFragment(NotificationsFragment())
                         true
                     }
                     R.id.profile -> {
+                        //Cambiar el fondo
+                        val layout = findViewById<View>(R.id.constrainLayout) as ConstraintLayout
+                        layout.setBackgroundResource(R.drawable.fondo4)
+                        //Cambiar el fragmento
                         replaceFragment(UserFragment())
                         true
                     }

@@ -14,17 +14,18 @@
 
     <style name="mainButton" parent="Base.Theme.ProyectoApp">
         <item name="android:textSize">18sp</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">8dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:background">@drawable/btn_background_red</item>
     </style>
 
     <style name="secondButton" parent="Base.Theme.ProyectoApp">
         <item name="android:textSize">18sp</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">8dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/nunito_black</item>
-        <item name="android:backgroundTint">@color/green</item>
+        <item name="android:background">@drawable/btn_background_green</item>
     </style>
 
     <style name="mainTitle" parent="Base.Theme.ProyectoApp">
