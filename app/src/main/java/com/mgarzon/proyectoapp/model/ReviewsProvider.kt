@@ -1,8 +1,8 @@
 package com.mgarzon.proyectoapp.model
 
-object BooksProvider {
-    val listOfBooks = mutableListOf<Book> (
-        Book(
+object ReviewsProvider {
+    val listOfReviews = mutableListOf<Review> (
+        Review(
             "El Señor de los Anillos",
             "J. R. R. Tolkien",
             "Fantasía",
@@ -14,7 +14,7 @@ object BooksProvider {
             "https://medios.lamarmota.es/senor-de-los-anillos.jpeg",
             4.5f
         ),
-        Book(
+        Review(
             "El Gran Gatsby",
             "F. Scott Fitzgerald",
             "Novela",
@@ -25,7 +25,7 @@ object BooksProvider {
             "https://www.anagrama-ed.es/uploads/media/portadas/0001/15/b2834bc4ea71357c8b549dfccdd16d611c6586ea.jpeg",
             2.0f
         ),
-        Book(
+        Review(
             "Frankenstein o el moderno Prometeo",
             "Mary Shelley",
             "Novela Gótica",
@@ -37,7 +37,7 @@ object BooksProvider {
             "https://static.serlogal.com/imagenes_big/9788439/978843973080.JPG",
             3.0f
         ),
-        Book(
+        Review(
             "1984",
             "George Orwell",
             "Ciencia Ficción",
@@ -48,7 +48,7 @@ object BooksProvider {
             "https://imagessl4.casadellibro.com/a/l/t7/44/9788499890944.jpg",
             5.0f
         ),
-        Book(
+        Review(
             "El Guardian entre el Centeno",
             "J. D. Salinger",
             "Novela",
@@ -59,7 +59,7 @@ object BooksProvider {
             "https://www.cartv.es/thumbs/fullwidth/2021-07/el-guardian-entre-el-centeno-portada-240.jpg",
             0.0f
         ),
-        Book(
+        Review(
             "Orgullo Y Prejuicio",
             "Austen, Jane",
             "Novala Romántica",
@@ -70,7 +70,7 @@ object BooksProvider {
             "https://cdn.agapea.com/Alianza-Editorial/Orgullo-y-prejuicio-i1n17428974.jpg",
             3.5f
         ),
-        Book(
+        Review(
             "Yo, robot",
             "Isaac Asimov",
             "Ciencia Ficción",
@@ -83,7 +83,7 @@ object BooksProvider {
             "https://www.cartv.es/thumbs/fullwidth/2021-07/el-guardian-entre-el-centeno-portada-240.jpg",
             1.5f
         ),
-        Book(
+        Review(
             "Ana Karenina",
             "Liev N. Tolstói",
             "Novela Romántica",
@@ -94,7 +94,7 @@ object BooksProvider {
             "https://cdn.agapea.com/Austral/Ana-Karenina-i1n15399766.jpg",
             4.0f
         ),
-        Book(
+        Review(
             "El Principito",
             "Antoine de Saint-Exupéry",
             "Novela",
@@ -106,7 +106,7 @@ object BooksProvider {
             "https://multimedia.dideco.es/img/literatura/EAN_9788478887200-5.jpg",
             5.0f
         ),
-        Book(
+        Review(
             "Don Quijote de la Mancha",
             "Miguel de Cervantes",
             "Novela satírica",
@@ -117,7 +117,7 @@ object BooksProvider {
             "https://simehbucket.s3.amazonaws.com/images/5a2d2f9c29b2605bc4176f80682b1fdf-full.jpg",
             2.0f
         ),
-        Book(
+        Review(
             "Crimen y Castigo",
             "Fiódor Dostoyevski",
             "Novela psicológica",
@@ -129,7 +129,7 @@ object BooksProvider {
             "https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/6254541d8ae4df16d4e69bc8_6034d7d1f3e0f54529b2b1a1_Crimen-y-castigo-fiodor-dostoyevski-editorial-alma.jpeg",
             3.0f
         ),
-        Book (
+        Review (
             "El nombre de la rosa",
             "Umberto Eco",
             "Novela histórica",
@@ -144,20 +144,20 @@ object BooksProvider {
 
     )
 
-    fun getBooks(): List<Book> {
+    fun getBooks(): List<Review> {
        Thread.sleep(2000)
-        return listOfBooks
+        return listOfReviews
     }
 
-    fun addBook(book: Book) {
-        listOfBooks.add(book)
+    fun addBook(review: Review) {
+        listOfReviews.add(review)
     }
 
     fun deleteBook(position: Int) {
-        listOfBooks.removeAt(position)
+        listOfReviews.removeAt(position)
     }
 
-    fun editBook(position: Int, book: Book) {
-        listOfBooks[position] = book
+    fun editBook(position: Int, review: Review) {
+        listOfReviews[position] = review
     }
 }

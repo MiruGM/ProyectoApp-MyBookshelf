@@ -5,21 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--include
-        android:id="@+id/toolbar"
-        layout="@layout/elem_custom_toolbar1"
-        android:elevation="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /-->
-
-
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="5dp"
+        android:elevation="4dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -64,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:padding="15dp"
-            tools:context=".ui.fragment.detail.DetailFragment">
+            tools:context=".ui.fragment.detailReview.DetailReviewFragment">
 
             <TextView
                 android:id="@+id/tvTitleT"

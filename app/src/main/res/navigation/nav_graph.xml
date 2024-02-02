@@ -10,23 +10,14 @@
         android:label="fragment_main_page"
         tools:layout="@layout/fragment_main_page" >
         <action
-            android:id="@+id/action_mainPageFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-        <action
             android:id="@+id/action_mainPageFragment_to_addEditFragment"
             app:destination="@id/addEditFragment" />
         <action
-            android:id="@+id/action_mainPageFragment_to_recomendedDetailFragment"
-            app:destination="@id/recomendedDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.mgarzon.proyectoapp.ui.fragment.detail.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+            android:id="@+id/action_mainPageFragment_to_recBookDetailFragment"
+            app:destination="@id/recBookDetailFragment" />
         <action
-            android:id="@+id/action_detailFragment_to_mainPageFragment"
-            app:destination="@id/mainPageFragment" />
+            android:id="@+id/action_mainPageFragment_to_detailReviewFragment"
+            app:destination="@id/detailReviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/addEditFragment"
@@ -38,11 +29,19 @@
             app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
-        android:id="@+id/recomendedDetailFragment"
-        android:name="com.mgarzon.proyectoapp.ui.fragment.RecommendedDetailFragment"
-        android:label="RecomendedDetailFragment" >
+        android:id="@+id/recBookDetailFragment"
+        android:name="com.mgarzon.proyectoapp.ui.fragment.detailRecBook.DetailRecBookFragment"
+        android:label="RecBookDetailFragment" >
         <action
-            android:id="@+id/action_recomendedDetailFragment_to_mainPageFragment"
+            android:id="@+id/action_recBookDetailFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailReviewFragment"
+        android:name="com.mgarzon.proyectoapp.ui.fragment.detailReview.DetailReviewFragment"
+        android:label="DetailReviewFragment" >
+        <action
+            android:id="@+id/action_detailReviewFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
     </fragment>
 </navigation>
