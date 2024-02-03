@@ -74,7 +74,7 @@ class RegisterActivity : AppCompatActivity() {
                             )
                             //Guardar el usuario en Firestore si el UID no es null
                             if (currentUserUID != null) {
-                                db.saveUser(newUser, currentUserUID)
+                                db.saveUser(newUser)
                             } else {
                                 Log.d("RegisterActivity", "Error al obtener el UID del usuario")
                             }

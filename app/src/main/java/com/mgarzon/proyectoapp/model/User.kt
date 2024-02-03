@@ -7,6 +7,10 @@ data class User (
     val email: String,
     val password: String,
     val image: String? = "@drawable/user_default",
-    val friendList: List<String>? = null,
-    val bookmarkList: List<String>? = null
-)
+    val friendList: MutableList<String>? = null,
+    val bookmarkList: MutableList<String>? = null
+) {
+    constructor() : this("", "", "", "", "", "", null, null)
+}
+
+

@@ -11,8 +11,11 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.FragmentMainPageBinding
+import com.mgarzon.proyectoapp.firebase.AuthManager
+import com.mgarzon.proyectoapp.firebase.FirestoreManager
 import com.mgarzon.proyectoapp.model.Review
 import com.mgarzon.proyectoapp.model.RecBook
 import com.mgarzon.proyectoapp.ui.fragment.detailRecBook.DetailRecBookFragment
@@ -38,7 +41,6 @@ class MainPageFragment : Fragment() {
         MainViewModelFactory(getString(R.string.key))
     }
 
-
     //Inflar la vista del fragmento con el menú del activity en visible
     private var mActivity: Activity? = null
 
@@ -62,17 +64,18 @@ class MainPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentMainPageBinding.bind(view).apply {
-            //Añadir bienvenida al usuario registrado
-            // HACER: Modificar para coger desde la BBDD tabla user
-            if (arguments != null) {
+            //Bienvenida al usuario registrado
+            val auth = AuthManager(requireContext())
+            val db = FirestoreManager(requireContext())
 
-                //Incluir la foto de perfil del usuario
-                val user = arguments?.getString("username")
-
-                tvWellcome.text = "Bienvenido $user :)"
-            }
-            imgUserDP?.setOnClickListener {
-                //aaaaah
+            val currentUserId = auth.getCurrentUser()?.uid
+            val userFromDB = db.getUser(currentUserId.toString()) { user ->
+                imgUserDP?.let {
+                    Glide.with(this@MainPageFragment)
+                        .load(user.image)
+                        .into(it)
+                }
+                tvWellcome.text = "Bienvenido ${user.username}"
             }
 
             //RecyclerView de la lista de reseñas

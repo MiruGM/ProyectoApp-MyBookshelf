@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
 
                                 //Guardo el usuario en la bd
                                 if (uid != null) {
-                                    db.saveUser(newUserToDatabase, uid)
+                                    db.saveUser(newUserToDatabase)
                                 } else {
                                     Log.d("LoginActivity", "Error al obtener el UID del usuario desde Google")
                                 }
