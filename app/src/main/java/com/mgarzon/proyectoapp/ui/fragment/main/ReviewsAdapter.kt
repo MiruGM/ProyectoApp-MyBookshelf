@@ -29,11 +29,11 @@ class ReviewsAdapter (
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.action_edit -> {
-                        context.onEdit(position)
+                        //context.onEdit(position)
                         true
                     }
                     R.id.action_delete -> {
-                        context.onDelete(position)
+                        //context.onDelete(position)
                         true
                     }
                     else -> false
@@ -41,8 +41,6 @@ class ReviewsAdapter (
             }
             popupMenu.show()
         }
-        /*holder.binding.btnDelete.setOnClickListener { context.onDelete(position) }
-        holder.binding.btnEdit.setOnClickListener { context.onEdit(position) }*/
     }
 
     override fun getItemCount(): Int = reviews.size

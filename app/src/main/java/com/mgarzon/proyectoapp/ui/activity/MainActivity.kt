@@ -2,7 +2,7 @@ package com.mgarzon.proyectoapp.ui.activity
 
 import android.os.Bundle
 import android.view.View
-import android.widget.RelativeLayout
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.ActivityMainBinding
 import com.mgarzon.proyectoapp.ui.fragment.NotificationsFragment
 import com.mgarzon.proyectoapp.ui.fragment.UserFragment
+import com.mgarzon.proyectoapp.ui.fragment.addedit.AddEditReviewFragment
 import com.mgarzon.proyectoapp.ui.fragment.main.MainPageFragment
 
 
@@ -78,7 +79,17 @@ class MainActivity : AppCompatActivity() {
         dialog.setContentView(view)
         dialog.show()
 
+        //Botón añadir reseña
+        val btnAddReview = view.findViewById<LinearLayout>(R.id.linearAddReview)
+        btnAddReview.setOnClickListener {
+            replaceFragment(AddEditReviewFragment())
+            dialog.dismiss()
+        }
 
-
+        //Botón añadir amigo
+        val btnAddFriend = view.findViewById<LinearLayout>(R.id.linearAddFriend)
+        btnAddFriend.setOnClickListener {
+            //Hacer cosas
+        }
     }
 }

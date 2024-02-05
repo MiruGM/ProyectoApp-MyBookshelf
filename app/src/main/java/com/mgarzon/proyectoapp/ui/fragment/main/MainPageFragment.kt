@@ -2,6 +2,7 @@ package com.mgarzon.proyectoapp.ui.fragment.main
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,7 @@ import com.mgarzon.proyectoapp.firebase.FirestoreManager
 import com.mgarzon.proyectoapp.model.Review
 import com.mgarzon.proyectoapp.model.RecBook
 import com.mgarzon.proyectoapp.ui.fragment.detailRecBook.DetailRecBookFragment
-import com.mgarzon.proyectoapp.ui.fragment.addedit.AddEditFragment
+import com.mgarzon.proyectoapp.ui.fragment.addedit.AddEditReviewFragment
 import com.mgarzon.proyectoapp.ui.fragment.detailReview.DetailReviewFragment
 
 
@@ -70,18 +71,24 @@ class MainPageFragment : Fragment() {
 
             val currentUserId = auth.getCurrentUser()?.uid
             val userFromDB = db.getUser(currentUserId.toString()) { user ->
-                imgUserDP?.let {
-                    Glide.with(this@MainPageFragment)
-                        .load(user.image)
-                        .into(it)
+                if (user.image?.startsWith("@drawable") == true || user.image.equals("")) {
+                    Log.d("Foto de perfil: ", "No hay foto de perfil")
+                } else {
+                    imgUserDP?.let {
+                        Glide.with(this@MainPageFragment)
+                            .load(user.image)
+                            .into(it)
+                    }
                 }
                 tvWellcome.text = "Bienvenido ${user.username}"
             }
 
             //RecyclerView de la lista de reseñas
             rvList.adapter = adapter
-            if (adapter.itemCount == 0) {
+            if (adapter.itemCount != 0) {
                 loadReviews()
+            } else {
+                Log.d("CargarReseñas: ", "No hay reseñas")
             }
 
             //RecyclerView de las recomendaciones
@@ -91,14 +98,19 @@ class MainPageFragment : Fragment() {
     }
 
     private fun loadReviews() {
-        reviewsViewModel.progressVisible.observe(viewLifecycleOwner) { visible ->
+        /*reviewsViewModel.progressVisible.observe(viewLifecycleOwner) { visible ->
             binding.progressBar?.visibility = if (visible) View.VISIBLE else View.GONE
         }
-
         reviewsViewModel.reviews.observe(viewLifecycleOwner) { books ->
             adapter.reviews = books
             adapter.notifyDataSetChanged()
+        }*/
+
+        reviewsViewModel.reviews.observe(viewLifecycleOwner) { reviews ->
+            adapter.reviews = reviews
+            adapter.notifyDataSetChanged()
         }
+
     }
 
     private fun loadRecBooks() {
@@ -127,7 +139,7 @@ class MainPageFragment : Fragment() {
         recBooksViewModel.navigateDone()
     }
 
-    fun onDelete(position: Int) {
+    /*fun onDelete(position: Int) {
         reviewsViewModel.deleteReview(position)
         Toast.makeText(requireContext(), "Reseña Eliminada", Toast.LENGTH_SHORT).show()
         adapter.notifyDataSetChanged()
@@ -136,8 +148,8 @@ class MainPageFragment : Fragment() {
     fun onEdit(position: Int) {
         findNavController().navigate(
             R.id.action_mainPageFragment_to_addEditFragment,
-            bundleOf(AddEditFragment.POS to position)
+            bundleOf(AddEditReviewFragment.POS to position)
         )
-    }
+    }*/
 }
 

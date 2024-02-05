@@ -3,6 +3,7 @@ package com.mgarzon.proyectoapp.ui.fragment
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import com.bumptech.glide.Glide
@@ -33,11 +34,15 @@ class UserFragment : Fragment(R.layout.fragment_user) {
             //Rellenar con los datos de la bd
             val currentUserId = auth.getCurrentUser()?.uid
             val userFromDB = db.getUser(currentUserId.toString()) { user ->
-                Glide.with(this@UserFragment)
-                    .load(user.image)
-                    .into(ivUserDP)
-                tvName.setText(user.name)
-                tvUser.setText(user.username)
+                if (user.image?.startsWith("@drawable") == true || user.image.equals("")) {
+                    Log.d("Foto de perfil: ", "No hay foto de perfil")
+                } else {
+                    Glide.with(this@UserFragment)
+                        .load(user.image)
+                        .into(ivUserDP)
+                    tvName.setText(user.name)
+                    tvUser.setText(user.username)
+                }
 
                 friendList = user.friendList ?: mutableListOf()
                 bookmarkList = user.bookmarkList ?: mutableListOf()

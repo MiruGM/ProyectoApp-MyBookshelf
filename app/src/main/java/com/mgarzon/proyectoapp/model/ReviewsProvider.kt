@@ -1,8 +1,10 @@
 package com.mgarzon.proyectoapp.model
 
 object ReviewsProvider {
-    val listOfReviews = mutableListOf<Review> (
+    /*val listOfReviews = mutableListOf<Review> (
         Review(
+            1,
+            null,
             "El Señor de los Anillos",
             "J. R. R. Tolkien",
             "Fantasía",
@@ -159,5 +161,5 @@ object ReviewsProvider {
 
     fun editBook(position: Int, review: Review) {
         listOfReviews[position] = review
-    }
+    }*/
 }
