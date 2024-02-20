@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo3"
+    android:background="@drawable/img_fondo_1"
     tools:context=".ui.activity.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="150dp"
-        android:background="@drawable/bottom_background_round_white"
+        android:background="@drawable/container_top_rounded_corners_white"
         android:elevation="4dp"
         android:orientation="vertical"
         android:padding="20dp"
@@ -26,13 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:text="¡Bienvenido!" />
+            android:text="@string/welcome" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo Electrónico"
+            android:hint="@string/mail"
             app:boxBackgroundColor="@color/light_pink">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Contraseña"
+            android:hint="@string/password"
             app:boxBackgroundColor="@color/light_pink"
             app:endIconMode="password_toggle">
 
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="¿Olvidó su contraseña?" />
+            android:text="@string/forgot_password" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Entrar" />
+            android:text="@string/login" />
 
         <Button
             android:id="@+id/btnRegister"
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Registrarse"
+            android:text="@string/register_2"
             app:backgroundTint="@null" />
 
         <View
@@ -91,18 +91,11 @@
             android:layout_marginVertical="20dp"
             android:background="?android:attr/listDivider" />
 
-        <!--Button
-            android:id="@+id/btnLoginGoogle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:text="Entrar con Google" /-->
-
         <LinearLayout
             android:id="@+id/btnLoginGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_background_white"
+            android:background="@drawable/container_round_grey_border_white"
             android:orientation="horizontal"
             android:padding="5dp">
 
@@ -111,7 +104,7 @@
                 android:layout_height="40dp"
                 android:layout_marginVertical="5dp"
                 android:layout_marginStart="20dp"
-                android:src="@drawable/googlelogo">
+                android:src="@drawable/img_google_logo">
 
             </ImageView>
 
@@ -120,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="40dp"
-                android:text="Continuar con Google"
+                android:text="@string/google"
                 android:textAlignment="center"
                 android:textSize="20sp">
 

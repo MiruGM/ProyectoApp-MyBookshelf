@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.ActivityMainBinding
+import com.mgarzon.proyectoapp.ui.fragment.AddFriendFragment
 import com.mgarzon.proyectoapp.ui.fragment.NotificationsFragment
 import com.mgarzon.proyectoapp.ui.fragment.UserFragment
 import com.mgarzon.proyectoapp.ui.fragment.addedit.AddEditReviewFragment
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.home -> {
                         //Cambiar el fondo
                         val layout = findViewById<View>(R.id.constrainLayout) as ConstraintLayout
-                        layout.setBackgroundResource(R.drawable.fondo3)
+                        layout.setBackgroundResource(R.drawable.img_fondo_1)
                         //Cambiar el fragmento
                         replaceFragment(MainPageFragment())
                         true
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.notif -> {
                         //Cambiar el fondo
                         val layout = findViewById<View>(R.id.constrainLayout) as ConstraintLayout
-                        layout.setBackgroundResource(R.drawable.fondo3)
+                        layout.setBackgroundResource(R.drawable.img_fondo_1)
                         //Cambiar el frarmento
                         replaceFragment(NotificationsFragment())
                         true
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.profile -> {
                         //Cambiar el fondo
                         val layout = findViewById<View>(R.id.constrainLayout) as ConstraintLayout
-                        layout.setBackgroundResource(R.drawable.fondo4)
+                        layout.setBackgroundResource(R.drawable.img_fondo_2)
                         //Cambiar el fragmento
                         replaceFragment(UserFragment())
                         true
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showBottomDialog() {
-        val view: View = layoutInflater.inflate(R.layout.elem_bottom_sheet_dialog, null)
+        val view: View = layoutInflater.inflate(R.layout.view_bottom_sheet_dialog, null)
         val dialog = BottomSheetDialog(this, R.style.BottomSheetDialog)
         dialog.setContentView(view)
         dialog.show()
@@ -89,7 +90,8 @@ class MainActivity : AppCompatActivity() {
         //Botón añadir amigo
         val btnAddFriend = view.findViewById<LinearLayout>(R.id.linearAddFriend)
         btnAddFriend.setOnClickListener {
-            //Hacer cosas
+            replaceFragment(AddFriendFragment())
+            dialog.dismiss()
         }
     }
 }

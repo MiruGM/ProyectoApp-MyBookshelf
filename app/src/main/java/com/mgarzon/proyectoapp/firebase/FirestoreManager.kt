@@ -1,7 +1,7 @@
 package com.mgarzon.proyectoapp.firebase
 
 import android.content.Context
-import android.util.Log
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mgarzon.proyectoapp.model.Review
 import com.mgarzon.proyectoapp.model.User
@@ -37,9 +37,49 @@ class FirestoreManager(context: Context) {
             }
     }
 
+    suspend fun getUserByUsername (username: String): User? {
+        val userRef = firestore
+            .collection(USERS)
+            .whereEqualTo("username", username)
+            .get()
+            .await()
+        for (document in userRef.documents) {
+            val user = document.toObject(User::class.java)
+            return user
+        }
+        return null
+    }
+
+    suspend fun deleteUser(userId: String) {
+        firestore.collection(USERS).document(userId).delete().await()
+    }
+
+    //Añadir y eliminar libros a la lista de favoritos
+    suspend fun addBookmark(userId: String, bookId: String) {
+        val userRef = firestore.collection(USERS).document(userId)
+        userRef.update("bookmarkList", FieldValue.arrayUnion(bookId)).await()
+    }
+
+    suspend fun removeBookmark(userId: String, bookId: String) {
+        val userRef = firestore.collection(USERS).document(userId)
+        userRef.update("bookmarkList", FieldValue.arrayRemove(bookId)).await()
+    }
+
+    suspend fun isBookmarked(userId: String, bookId: String): Boolean {
+        val userRef = firestore.collection(USERS).document(userId)
+        val user = userRef.get().await().toObject(User::class.java)
+        return user?.bookmarkList?.contains(bookId) ?: false
+    }
+
+    suspend fun getBookmarkList(userId: String): List<String> {
+        val userRef = firestore.collection(USERS).document(userId)
+        val user = userRef.get().await().toObject(User::class.java)
+        return user?.bookmarkList ?: emptyList()
+    }
+
     //Manejar Reseñas
     suspend fun addReview(review: Review) {
-        firestore.collection(REVIEWS).document(review.id.toString()).set(review).await()
+        firestore.collection(REVIEWS).add(review).await()
     }
 
     suspend fun updateReview(review: Review) {
@@ -57,10 +97,9 @@ class FirestoreManager(context: Context) {
         val reviewRef = firestore.collection(REVIEWS)
             .whereEqualTo("userId", userId)
             .orderBy("title")
-        Log.d("FManager", reviewRef.toString())
+
         val subscription = reviewRef.addSnapshotListener { snapshot, error ->
             if (error != null) {
-                Log.e("FManager", "Error listening to reviews", error)
                 close(error)
                 return@addSnapshotListener
             }
@@ -71,7 +110,6 @@ class FirestoreManager(context: Context) {
                     review?.id = document.id
                     review?.let { reviews.add(review) }
                 }
-                Log.d("Reseñas en FManager", "Emitting reviews: $reviews")
                 trySend(reviews).isSuccess
             }
         }

@@ -34,7 +34,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/default_user_dp"
+                android:src="@drawable/img_default_user_dp"
                 android:layout_marginTop="6dp"
                 app:shapeAppearanceOverlay="@style/roundedImageView" />
 
@@ -65,8 +65,8 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_marginTop="6dp"
-                android:background="@drawable/container_icon_round_green"
-                android:src="@drawable/baseline_add_24" />
+                android:background="@drawable/container_round_green"
+                android:src="@drawable/icon_add_white" />
         </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -29,11 +29,11 @@ class ReviewsAdapter (
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.action_edit -> {
-                        //context.onEdit(position)
+                        context.onEdit(reviews.get(position))
                         true
                     }
                     R.id.action_delete -> {
-                        //context.onDelete(position)
+                        context.onDelete(reviews.get(position))
                         true
                     }
                     else -> false
@@ -53,5 +53,6 @@ class ReviewsAdapter (
 
         }
     }
+
 
 }

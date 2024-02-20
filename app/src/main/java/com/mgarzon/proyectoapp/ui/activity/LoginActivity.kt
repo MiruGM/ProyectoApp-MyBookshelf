@@ -115,7 +115,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             twResetPassword.setOnClickListener {
-                val intent = Intent(this@LoginActivity, ResetPasswordActivity::class.java)
+                val intent = Intent(this@LoginActivity, ResetResetPasswordActivity::class.java)
                 startActivity(intent)
             }
         }

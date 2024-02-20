@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoApp</string>
+    <string name="app_name">My Bookshelf</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Keys -->
@@ -7,7 +7,49 @@
     <string name="key">AIzaSyAog5g_OgiB1LMh2hrJUCMIa0S-P2SeFyQ</string>
 
     <!-- Strings-->
-    <string name="user">\@usuario</string>
-    <string name="editar_usuario">Editar Usuario</string>
-    <string name="usuario">Usuario</string>
+    <string name="edit_user">Editar Usuario</string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="add_new">Añadir Nuevo</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="friendlist">Lista de Amigos</string>
+    <string name="bookmarklist">Lista de Marcadores</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="delete_account">¿Quieres eliminar tu cuenta?</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="for_you">Especial para ti: </string>
+    <string name="search_friend">Busca a un Amigo</string>
+    <string name="not_found">No se encontró el usuario</string>
+    <string name="add_review">Crear Reseña</string>
+    <string name="reset_password">Recupera tu Contraseña</string>
+    <string name="reset_pass_desc">Inserte su correo electrónico y recibirá un correo electrónico con las instrucciones para restablecer su contraseña"</string>
+    <string name="retrieve">Recuperar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="register">Registro</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="password_2">Repita la Contraseña</string>
+    <string name="register_2">Registrarse</string>
+    <string name="google">Continuar con Google</string>
+    <string name="reset_pass_description" />
+    <string name="user">Usuario</string>
+    <string name="username">\@usuario</string>
+    <string name="name">Nombre</string>
+    <string name="img_url">URL de la imagen</string>
+    <string name="mail">Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="review">Reseña</string>
+    <string name="friend">Amigo/a</string>
+    <string name="title">Título</string>
+    <string name="author">Autor/a</string>
+    <string name="genre">Género</string>
+    <string name="publisher">Editorial</string>
+    <string name="publishing_date">Fecha de Publicación</string>
+    <string name="page_count">Número de páginas</string>
+    <string name="synopsis">Sinopsis</string>
+    <string name="read_again">¿Volvería a leerlo?</string>
+    <string name="my_opinion">Mi opinión</string>
+    <string name="more_info">más información</string>
+    <string name="rating">Mi valoración</string>
+    <string name="forgot_password">¿Olvidó su contraseña?</string>
+
+
 </resources>

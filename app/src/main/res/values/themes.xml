@@ -17,7 +17,7 @@
         <item name="android:padding">8dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/nunito_black</item>
-        <item name="android:background">@drawable/btn_background_red</item>
+        <item name="android:background">@drawable/container_round_red</item>
     </style>
 
     <style name="secondButton" parent="Base.Theme.ProyectoApp">
@@ -25,7 +25,7 @@
         <item name="android:padding">8dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/nunito_black</item>
-        <item name="android:background">@drawable/btn_background_green</item>
+        <item name="android:background">@drawable/container_round_green</item>
     </style>
 
     <style name="mainTitle" parent="Base.Theme.ProyectoApp">

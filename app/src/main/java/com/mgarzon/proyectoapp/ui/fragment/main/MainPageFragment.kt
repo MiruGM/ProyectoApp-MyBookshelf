@@ -2,17 +2,18 @@ package com.mgarzon.proyectoapp.ui.fragment.main
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.mgarzon.proyectoapp.R
 import com.mgarzon.proyectoapp.databinding.FragmentMainPageBinding
 import com.mgarzon.proyectoapp.firebase.AuthManager
@@ -28,6 +29,8 @@ class MainPageFragment : Fragment() {
 
     private lateinit var binding: FragmentMainPageBinding
 
+    private lateinit var reviewsViewModel: ReviewsViewModel
+
     private val adapter = ReviewsAdapter(this@MainPageFragment) { review ->
         navigateToReview(review)
     }
@@ -35,8 +38,6 @@ class MainPageFragment : Fragment() {
     private val adapterRecBook = RecBooksAdapter() { recBook ->
         recBooksViewModel.navigateTo(recBook)
     }
-
-    private val reviewsViewModel: ReviewsViewModel by activityViewModels()
 
     private val recBooksViewModel: RecBooksViewModel by activityViewModels() {
         MainViewModelFactory(getString(R.string.key))
@@ -57,6 +58,8 @@ class MainPageFragment : Fragment() {
 
         val menu = mActivity?.findViewById<CoordinatorLayout>(R.id.coordinatorLayout)
         menu?.visibility = View.VISIBLE
+        val background = mActivity?.findViewById<View>(R.id.constrainLayout)
+        background?.setBackgroundResource(R.drawable.img_fondo_1)
 
         return root
     }
@@ -65,52 +68,54 @@ class MainPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentMainPageBinding.bind(view).apply {
+
             //Bienvenida al usuario registrado
             val auth = AuthManager(requireContext())
             val db = FirestoreManager(requireContext())
 
+            //ViewModel de las reseñas
+            reviewsViewModel = ReviewsViewModel(db,auth.getCurrentUser()?.uid.toString())
+
             val currentUserId = auth.getCurrentUser()?.uid
             val userFromDB = db.getUser(currentUserId.toString()) { user ->
                 if (user.image?.startsWith("@drawable") == true || user.image.equals("")) {
-                    Log.d("Foto de perfil: ", "No hay foto de perfil")
+                    imgUserDP.setImageResource(R.drawable.img_default_user_dp)
                 } else {
-                    imgUserDP?.let {
+                    imgUserDP.let {
                         Glide.with(this@MainPageFragment)
                             .load(user.image)
                             .into(it)
                     }
                 }
-                tvWellcome.text = "Bienvenido ${user.username}"
+                tvWellcome.text = "Bienvenido ${user.name}"
             }
 
             //RecyclerView de la lista de reseñas
             rvList.adapter = adapter
-            if (adapter.itemCount != 0) {
-                loadReviews()
-            } else {
-                Log.d("CargarReseñas: ", "No hay reseñas")
-            }
+            loadReviews()
 
             //RecyclerView de las recomendaciones
-            rvRecomendation?.adapter = adapterRecBook
+            rvRecomendation.adapter = adapterRecBook
             loadRecBooks()
+
+            //Filtrar reseñas
+            etSearch.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    reviewsViewModel.filterReviews(s.toString())
+                }
+
+                override fun afterTextChanged(s: Editable?) {}
+            })
         }
     }
 
     private fun loadReviews() {
-        /*reviewsViewModel.progressVisible.observe(viewLifecycleOwner) { visible ->
-            binding.progressBar?.visibility = if (visible) View.VISIBLE else View.GONE
-        }
-        reviewsViewModel.reviews.observe(viewLifecycleOwner) { books ->
-            adapter.reviews = books
-            adapter.notifyDataSetChanged()
-        }*/
-
         reviewsViewModel.reviews.observe(viewLifecycleOwner) { reviews ->
             adapter.reviews = reviews
             adapter.notifyDataSetChanged()
         }
-
     }
 
     private fun loadRecBooks() {
@@ -139,17 +144,17 @@ class MainPageFragment : Fragment() {
         recBooksViewModel.navigateDone()
     }
 
-    /*fun onDelete(position: Int) {
-        reviewsViewModel.deleteReview(position)
-        Toast.makeText(requireContext(), "Reseña Eliminada", Toast.LENGTH_SHORT).show()
+    fun onDelete(review: Review) {
+        reviewsViewModel.deleteReview(review)
+        Snackbar.make(requireView(), "Reseña Eliminada", Snackbar.LENGTH_SHORT).show()
         adapter.notifyDataSetChanged()
     }
 
-    fun onEdit(position: Int) {
+    fun onEdit(review: Review) {
         findNavController().navigate(
             R.id.action_mainPageFragment_to_addEditFragment,
-            bundleOf(AddEditReviewFragment.POS to position)
+            bundleOf(AddEditReviewFragment.REVIEW to review)
         )
-    }*/
+    }
 }
 

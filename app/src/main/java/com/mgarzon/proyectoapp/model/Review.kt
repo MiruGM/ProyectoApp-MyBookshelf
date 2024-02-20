@@ -14,4 +14,6 @@ data class Review (
     val readAgain: Boolean,
     val urlCover: String,
     val rating: Float = 0f
-): Parcelable
+): Parcelable {
+    constructor() : this("", "", "", "", "", "", true, "", 0f)
+}

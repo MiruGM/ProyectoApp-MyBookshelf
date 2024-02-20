@@ -24,13 +24,14 @@ class RecBooksViewModel (val apiKey: String) : ViewModel() {
                 if (result != null && result.items != null) {
                     val recBooksList = result.items.map { item ->
                         RecBook(
+                            item.id,
                             item.volumeInfo.title,
                             item.volumeInfo.authors,
                             item.volumeInfo.categories,
-                            /*item.volumeInfo.publisher,*/
+                            item.volumeInfo.publisher,
                             item.volumeInfo.publishedDate,
                             item.volumeInfo.pageCount,
-                            /*item.volumeInfo.description,*/
+                            item.volumeInfo.description,
                             convertToHttps(item.volumeInfo.imageLinks.thumbnail)
                         )
                     }

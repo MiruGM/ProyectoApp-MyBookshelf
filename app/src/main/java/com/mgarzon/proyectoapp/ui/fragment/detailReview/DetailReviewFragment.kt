@@ -43,7 +43,7 @@ class DetailReviewFragment : Fragment() {
         val menu = mActivity?.findViewById<CoordinatorLayout>(R.id.coordinatorLayout)
         menu?.visibility = View.INVISIBLE
         val background = mActivity?.findViewById<View>(R.id.constrainLayout)
-        background?.setBackgroundResource(R.color.light_pink)
+        background?.setBackgroundResource(R.color.white)
 
         return root
     }
@@ -69,24 +69,24 @@ class DetailReviewFragment : Fragment() {
                     tvReadAgainC.text = "SI"
                 }
                 Glide.with(requireContext()).load(review?.urlCover).into(ivCover as ImageView)
-                userRating?.rating = review?.rating ?: 0f
+                userRating.rating = review?.rating ?: 0f
 
 
                 btnMore.setOnClickListener {
                     searchOnline(review?.title)
                 }
 
-                btnFav?.setOnClickListener {
+                btnFav.setOnClickListener {
 
                 }
-
             }
         }
     }
+
+    private fun searchOnline(title: String?) {
+        val webpage: Uri = Uri.parse("https://www.google.com/search?q=$title")
+        val intent = Intent(Intent.ACTION_VIEW, webpage)
+        startActivity(intent)
+    }
 }
 
-private fun searchOnline(title: String?) {
-    val webpage: Uri = Uri.parse("https://www.google.com/search?q=$title")
-    val intent = Intent(Intent.ACTION_VIEW, webpage)
-    //startActivity(intent)
-}

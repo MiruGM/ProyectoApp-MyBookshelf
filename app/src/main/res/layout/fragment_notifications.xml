@@ -10,9 +10,10 @@
         android:id="@+id/llTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/top_background_round_white"
+        android:background="@drawable/container_bottom_rounded_corners_white"
         android:orientation="vertical"
         android:paddingVertical="20dp"
+        android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +23,7 @@
             style="@style/inAppTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notificaciones" />
+            android:text="@string/notifications" />
     </LinearLayout>
 
     <!--androidx.recyclerview.widget.RecyclerView
@@ -33,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/llTitle"
-        tools:listitem="@layout/view_notif_recomendation_liked"/-->
+        tools:listitem="@layout/view_notif_recomendation_liked"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -223,8 +224,5 @@
                 android:textSize="20dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.cardview.widget.CardView>
-
-
+    </androidx.cardview.widget.CardView-->
 </androidx.constraintlayout.widget.ConstraintLayout>

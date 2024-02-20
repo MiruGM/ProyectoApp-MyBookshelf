@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bottom_background_round_white">
+    android:elevation="8dp"
+    android:background="@drawable/container_top_rounded_corners_white">
 
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Añadir Nuevo"
+        android:text="@string/add_new"
         android:padding="8dp"
         style="@style/inAppTitle"/>
 
@@ -40,13 +41,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_post_add_red"/>
+            android:src="@drawable/icon_add_review_red"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="Reseña"
+            android:layout_marginStart="30dp"
+            android:text="@string/review"
             android:fontFamily="@font/nunito_black"
             android:textSize="18sp" />
 
@@ -70,14 +71,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_person_add_red"/>
+            android:src="@drawable/icon_add_friend_red"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amigo/a"
+            android:text="@string/friend"
             android:fontFamily="@font/nunito_black"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:textSize="18sp"/>
 
     </LinearLayout>

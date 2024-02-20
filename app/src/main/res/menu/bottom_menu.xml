@@ -5,19 +5,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/home"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/icon_home_white"
         android:title="Inicio" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/notif"
-        android:icon="@drawable/baseline_notifications_24"
+        android:icon="@drawable/icon_notifications_white"
         android:title="Avisos" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/profile"
-        android:icon="@drawable/baseline_person_24"
+        android:icon="@drawable/icon_user_white"
         android:title="Perfil" />
     <item
         android:layout_width="wrap_content"

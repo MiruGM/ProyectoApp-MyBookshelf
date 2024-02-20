@@ -24,7 +24,7 @@ class RegisterActivity : AppCompatActivity() {
 
         with(binding) {
             btnRegister.setOnClickListener {
-                val user = etUser.text.toString()
+                val user = etUser.text.toString().lowercase()
                 val name = etName.text.toString()
                 val mail = etMail.text.toString()
                 val password = etPassword.text.toString()

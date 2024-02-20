@@ -10,7 +10,8 @@
         android:id="@+id/infoContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/top_background_round_white"
+        android:elevation="4dp"
+        android:background="@drawable/container_bottom_rounded_corners_white"
         android:paddingHorizontal="8dp"
         android:paddingTop="8dp"
         android:paddingBottom="20dp"
@@ -25,7 +26,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/default_user_dp"
+            android:src="@drawable/img_default_user_dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/roundedImageView" />
@@ -37,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
-            android:text="Bienvenido"
+            android:text="@string/welcome"
             app:layout_constraintStart_toEndOf="@+id/imgUserDP"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +49,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/nunito_black"
-            android:text="Especial para ti:"
+            android:text="@string/for_you"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvWellcome" />
 
@@ -66,14 +67,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+    <EditText
+        android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/searchbar_background"
+        android:padding="10dp"
         android:elevation="4dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:background="@drawable/container_round_white"
+        android:drawableStart="@drawable/icon_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoContainer" />
@@ -87,20 +92,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch"
         tools:listitem="@layout/view_book" />
-
-    <!--ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" /-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,5 @@
     <style name="roundedCornerImageView">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">15%</item>
-        <item name="android:background">@drawable/border_detail_img</item>
     </style>
 </resources>

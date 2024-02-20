@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:backgroundTint="#00FFFFFF"
-            android:src="@drawable/baseline_arrow_back" />
+            android:src="@drawable/icon_arrow_back_gray" />
 
 
         <View
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:backgroundTint="#00FFFFFF"
-            android:src="@drawable/baseline_favorite_border_24" />
+            android:src="@drawable/icon_border_favorite_grey" />
     </LinearLayout>
 
     <ScrollView
@@ -64,7 +64,7 @@
                 style="@style/inAppTitleBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Título"
+                android:text="@string/title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +87,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Autor: "
+                android:text="@string/author"
                 app:layout_constraintStart_toEndOf="@+id/ivCover"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitleT" />
 
@@ -95,7 +95,7 @@
                 android:id="@+id/tvAuthorC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvAuthorT"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthorT" />
 
@@ -106,7 +106,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Género: "
+                android:text="@string/genre"
                 app:layout_constraintStart_toEndOf="@+id/ivCover"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthorC" />
 
@@ -114,7 +114,7 @@
                 android:id="@+id/tvGenreC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvGenreT"
                 app:layout_constraintTop_toBottomOf="@+id/tvGenreT" />
 
@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Reseña: "
+                android:text="@string/review"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivCover" />
 
@@ -132,7 +132,7 @@
                 android:id="@+id/tvReviewC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvReviewT"
                 app:layout_constraintTop_toBottomOf="@+id/tvReviewT" />
@@ -143,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Volvería a leerlo: "
+                android:text="@string/read_again"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvReviewC" />
 
@@ -152,7 +152,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="..."
+                android:layout_marginStart="10dp"
+                android:text=""
                 app:layout_constraintStart_toEndOf="@+id/tvReadAgainT"
                 app:layout_constraintTop_toBottomOf="@+id/tvReviewC" />
 
@@ -187,7 +188,7 @@
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/pink"
                 android:fontFamily="@font/nunito_black"
-                android:text="más información"
+                android:text="@string/more_info"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             android:layout_weight="0"
-            android:src="@drawable/baseline_arrow_back" />
+            android:src="@drawable/icon_arrow_back_gray" />
 
         <View
             android:id="@+id/divider"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             android:layout_weight="0"
-            android:src="@drawable/baseline_share" />
+            android:src="@drawable/icon_share_grey" />
 
         <ImageButton
             android:id="@+id/btnBookmark"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             android:layout_weight="0"
-            android:src="@drawable/baseline_bookmark_border_grey" />
+            android:src="@drawable/icon_border_bookmark_grey" />
     </LinearLayout>
 
     <ScrollView
@@ -71,7 +71,7 @@
                 style="@style/inAppTitleBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Título"
+                android:text="@string/title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -94,15 +94,15 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Autor: "
+                android:text="@string/author"
                 app:layout_constraintStart_toEndOf="@+id/ivCover"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitleT" />
 
             <TextView
                 android:id="@+id/tvAuthorC"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvAuthorT"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthorT" />
 
@@ -113,15 +113,15 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Género: "
+                android:text="@string/genre"
                 app:layout_constraintStart_toEndOf="@+id/ivCover"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthorC" />
 
             <TextView
                 android:id="@+id/tvGenreC"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvGenreT"
                 app:layout_constraintTop_toBottomOf="@+id/tvGenreT" />
 
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Editorial: "
+                android:text="@string/publisher"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivCover" />
 
@@ -139,7 +139,7 @@
                 android:id="@+id/tvPublisherC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvPublicherT"
                 app:layout_constraintTop_toBottomOf="@+id/tvPublicherT" />
 
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Fecha de publicación: "
+                android:text="@string/publishing_date"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPublisherC" />
 
@@ -157,7 +157,7 @@
                 android:id="@+id/tvDateC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvDateT"
                 app:layout_constraintTop_toBottomOf="@+id/tvDateT" />
 
@@ -167,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Número de Páginas: "
+                android:text="@string/page_count"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDateC" />
 
@@ -175,7 +175,7 @@
                 android:id="@+id/tvPageCountC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintStart_toStartOf="@+id/tvPageCountT"
                 app:layout_constraintTop_toBottomOf="@+id/tvPageCountT" />
 
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Sinopsis: "
+                android:text="@string/synopsis"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPageCountC" />
 
@@ -193,7 +193,7 @@
                 android:id="@+id/tvSynopsisC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvSynopsisT"
                 app:layout_constraintTop_toBottomOf="@+id/tvSynopsisT" />

@@ -21,10 +21,6 @@ class AuthManager(context: Context) {
 
     private val firebaseAuth: FirebaseAuth by lazy { Firebase.auth }
 
-    /*private val googleSignInClient: GoogleSignInClient by lazy {
-        GoogleSignIn.getClient(context, GoogleSignInOptions.DEFAULT_SIGN_IN)
-    }*/
-
     private val googleSignInClient: GoogleSignInClient by lazy {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(context.getString(R.string.default_web_client_id))
@@ -65,6 +61,10 @@ class AuthManager(context: Context) {
     fun signOut() {
         firebaseAuth.signOut()
         googleSignInClient.signOut()
+    }
+
+    fun deleteUser() {
+        firebaseAuth.currentUser?.delete()
     }
 
     fun getCurrentUser() = firebaseAuth.currentUser

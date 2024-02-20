@@ -7,8 +7,33 @@
     android:orientation="vertical"
     tools:context=".ui.fragment.AddFriendFragment">
 
-    <include
-        layout="@layout/elem_custom_toolbar2"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="0"
+            android:src="@drawable/icon_arrow_back_gray" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,28 +47,115 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             style="@style/inAppTitle"
-            android:text="Busca a un Amigo" />
+            android:text="@string/search_friend" />
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/searchbar_background2"
-            android:layout_marginTop="20dp">
+            android:orientation="horizontal">
 
-        </androidx.appcompat.widget.SearchView>
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/container_round_light_pink"
+                android:drawableStart="@drawable/icon_at_grey"
+                android:hint="@string/user"
+                android:padding="8dp" />
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/container_round_grey_border_white"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/icon_search"/>
+
+        </LinearLayout>
+
 
         <View
-            android:id="@+id/divider"
+            android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="20dp"
             android:background="?android:attr/listDivider" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <LinearLayout
+            android:id="@+id/llResultUser"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/view_friend_profile"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="@drawable/container_round_grey_border_white"
+            android:visibility="gone">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgResultUserDP"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_default_user_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvResultName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_black"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/tvResultUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btnAddFriend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/container_round_green"
+                android:layout_marginTop="5dp"
+                android:padding="12dp"
+                android:visibility="visible"
+                android:src="@drawable/icon_check_grey"/>
+
+            <ImageView
+                android:id="@+id/btnDeleteFriend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/container_round_dark_red"
+                android:layout_marginTop="5dp"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:src="@drawable/icon_check_grey"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvNotFound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/not_found"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"/>
 
 
     </LinearLayout>

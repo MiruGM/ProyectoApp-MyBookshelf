@@ -3,14 +3,13 @@ package com.mgarzon.proyectoapp.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import com.mgarzon.proyectoapp.App
 import com.mgarzon.proyectoapp.databinding.ActivityResetPasswordBinding
 import com.mgarzon.proyectoapp.firebase.AuthManager
 import com.mgarzon.proyectoapp.firebase.AuthRes
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class ResetPasswordActivity : AppCompatActivity() {
+class ResetResetPasswordActivity : AppCompatActivity() {
 
     private val auth = AuthManager(this)
 

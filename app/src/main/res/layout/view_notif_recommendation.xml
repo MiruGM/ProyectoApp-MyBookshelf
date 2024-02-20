@@ -57,8 +57,8 @@
                 android:padding="10dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/container_icon_round_pink"
-                android:src="@drawable/baseline_favorite_border_white" />
+                android:background="@drawable/container_round_dark_red"
+                android:src="@drawable/icon_border_favorite_white" />
 
             <ImageButton
             android:id="@+id/btnGoDetail"
@@ -66,8 +66,8 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginTop="6dp"
-            android:background="@drawable/container_icon_round_green"
-            android:src="@drawable/baseline_arrow_right" />
+            android:background="@drawable/container_round_green"
+            android:src="@drawable/icon_double_arrow_right_white" />
         </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

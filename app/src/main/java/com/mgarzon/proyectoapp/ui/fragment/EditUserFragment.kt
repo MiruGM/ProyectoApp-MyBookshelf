@@ -57,7 +57,7 @@ class EditUserFragment : Fragment(R.layout.fragment_edit_user) {
 
                 val newUser = User(
                     id = currentUserId,
-                    username = etUser.text.toString(),
+                    username = etUser.text.toString().lowercase(),
                     name = etName.text.toString(),
                     email = etMail.text.toString(),
                     password = etPassword.text.toString(),
